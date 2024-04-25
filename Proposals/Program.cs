@@ -26,7 +26,8 @@ builder.Services.AddSwaggerGen(c =>
 });
 builder.Services.AddDbContext<DataContext>(options =>
 {
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+    //options.UseSqlServer(builder.Configuration.GetConnectionString("SQLExpressConnection"));
+    options.UseSqlite(builder.Configuration.GetConnectionString("SqlLiteConnection"));
 });
 
 
